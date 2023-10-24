@@ -1,0 +1,20 @@
+:local(.mainPage) {
+  display: flex;
+  height: calc(100% - 84px);
+  /*height: 100%;*/
+}
+
+:local(.list) {
+  padding: 20px;
+  border-right: 1px solid white;
+}
+
+:local(.details) {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+:local(.ingredients) {
+  list-style: none;
+}

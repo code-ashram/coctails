@@ -1,7 +1,6 @@
 :local(.mainPage) {
   display: flex;
   height: calc(100% - 84px);
-  /*height: 100%;*/
 }
 
 :local(.list) {
@@ -17,4 +16,12 @@
 
 :local(.ingredients) {
   list-style: none;
+}
+
+:local(.errorPage) {
+  text-align: center;
+}
+
+:local(.errorTitle) {
+  font-size: 34px;
 }

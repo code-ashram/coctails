@@ -1,17 +1,25 @@
-import styles from './App.module.css'
+import { useLoaderData } from 'react-router-dom'
 
-const App = () => {
+import Header from '../components/Header'
+import { Category } from '../api'
+
+import styles from '../Root.module.css'
+
+const Root = () => {
+
+  const { categories } = useLoaderData() as Record<'categories', Category[]>
 
   return (
     <>
-      <header>
-        <nav>Drinks</nav>
-      </header>
+      <Header />
 
       <main className={styles.mainPage}>
         <ul className={styles.list}>
-          <li>Coctails</li>
-          <li>Coffee</li>
+          {categories.map((category) => (
+            <li key={category.strCategory}>
+              {category.strCategory}
+            </li>
+          ))}
         </ul>
 
         <section className={styles.details}>
@@ -35,4 +43,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Root

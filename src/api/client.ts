@@ -1,5 +1,7 @@
 import axios from 'axios'
-import { Category } from './models.ts'
+
+import { Category, Drink } from './models.ts'
+import { convertValue } from '../utils.ts'
 
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1'
 
@@ -9,6 +11,10 @@ const client = axios.create({
 
 export const getCategories = async (): Promise<Category[]> =>
   client.get<Record<'drinks', Category[]>>('/list.php?c=list')
+    .then((response) => response.data.drinks)
+
+export const getCategory = async (category: string): Promise<Drink[]> =>
+  client.get<Record<'drinks', Drink[]>>(`/filter.php?c=${convertValue(category)}`)
     .then((response) => response.data.drinks)
 
 // export const getPost = async (id: number): Promise<Post> =>

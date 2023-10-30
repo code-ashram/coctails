@@ -5,16 +5,14 @@ import {
   RouterProvider
 } from 'react-router-dom'
 
-import { loadCategories, loadDrinks } from './utils.ts'
+import { loadCategories, loadDrink, loadDrinks } from './utils.ts'
 import Root from './pages/Root.tsx'
 import ErrorPage from './pages/ErrorPage.tsx'
 import ErrorCategory from './pages/ErrorCategory.tsx'
 import Category from './pages/Category.tsx'
 import ErrorDrink from './pages/ErrorDrink.tsx'
-import Drink from './pages/Drink.tsx'
-
+import DrinkDetails from './pages/DrinkDetails.tsx'
 import './index.css'
-
 
 const router = createBrowserRouter([
   {
@@ -32,9 +30,12 @@ const router = createBrowserRouter([
         loader: loadDrinks
       },
       {
-        path: '/:drinks/drinkId',
-        element: <Drink />,
+        path: '/:drinks/:drinkId',
+        element: <DrinkDetails />,
         errorElement: <ErrorDrink />,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        loader: loadDrink
       }
     ]
   }

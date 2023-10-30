@@ -1,9 +1,9 @@
 import { Link, Outlet, useLoaderData } from 'react-router-dom'
 import Header from '../components/Header'
-
-import styles from '../Root.module.css'
 import { Category } from '../api'
 import { encodeValue } from '../utils.ts'
+
+import styles from '../Root.module.css'
 
 const Root = () => {
   const { categories } = useLoaderData() as Record<'categories', Category[]>

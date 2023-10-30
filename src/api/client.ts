@@ -17,9 +17,9 @@ export const getDrinks = async (category: string): Promise<Drink[]> =>
   client.get<Record<'drinks', Drink[]>>(`/filter.php?c=${convertValue(category)}`)
     .then((response) => response.data.drinks)
 
-export const getDrink = async (id: number): Promise<Drink> =>
-  client.get<Drink>(`/lookup.php?i=/${id}`)
-    .then((response) => response.data)
+export const getDrink = async (id: string): Promise<Drink> =>
+  client.get<Record<'drinks', Drink[]>>(`/lookup.php?i=${id}`)
+    .then((response) => response.data.drinks[0])
 
 // export const getComments = async (postId: number): Promise<Comment[]> =>
 //   client.get<Comment[]>(`/comments`, { params: { postId } })

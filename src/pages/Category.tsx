@@ -9,7 +9,9 @@ const Category = () => {
     <ul>
       {drinks?.map(({ idDrink, strDrink }) => (
         <li key={idDrink}>
-          <Link to={`/${params.drinks}/drinkId`}>{strDrink}</Link>
+          <Link to={`/${params.drinks}/${idDrink}`}>
+            {strDrink}
+          </Link>
         </li>
       ))}
     </ul>

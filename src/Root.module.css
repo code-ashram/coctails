@@ -12,6 +12,11 @@
   width: 100%;
   padding: 20px;
   text-align: center;
+  overflow: scroll;
+}
+
+:local(.details) ul {
+  list-style: none;
 }
 
 :local(.ingredients) {

@@ -5,7 +5,7 @@ export type Category = {
 export type Drink = {
   idDrink: string,
   strDrink: string,
-  strDrinkAlternate: string | null,
+  strDrinkAlternate: string | undefined,
   strTags: string | null,
   strVideo: string | null,
   strCategory: string,

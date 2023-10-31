@@ -29,3 +29,8 @@ export const loadDrink = async ({ params }: Arg): Promise<Record<'drink', Drink>
   const drink = await getDrink(params.drinkId)
   return { drink }
 }
+
+export const filterIngredients = (obj: Drink) => {
+  const filteredArr = Object.entries(obj).filter((arr) => arr[0].includes('strIngredient') && arr[1] !== null)
+  return filteredArr.map((arr) => arr[1])
+}

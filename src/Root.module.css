@@ -30,3 +30,7 @@
 :local(.errorTitle) {
   font-size: 34px;
 }
+
+:local(.drinkImg) {
+  width: 300px;
+}

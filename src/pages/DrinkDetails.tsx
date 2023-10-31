@@ -1,7 +1,8 @@
-// import styles from '../Root.module.css'
+import styles from '../Root.module.css'
 import { Drink } from '../api'
 
 import { useLoaderData } from 'react-router-dom'
+import { filterIngredients } from '../utils.ts'
 
 const DrinkDetails = () => {
   const { drink } = useLoaderData() as Record<'drink', Drink>
@@ -9,19 +10,19 @@ const DrinkDetails = () => {
   return (
     <>
       <h2>{drink.strDrink}</h2>
-      {/* <img src="#" alt="Drink img" /> */}
+      <img className={styles.drinkImg} src={drink.strDrinkThumb} alt={drink.strDrinkAlternate} />
 
-      {/* <h3>Ingredients</h3> */}
+      <h3>Ingredients:</h3>
 
-      {/* <ul className={styles.ingredients}> */}
-      {/*   <li>Ingredient 1</li> */}
-      {/*   <li>Ingredient 2</li> */}
-      {/*   <li>Ingredient 3</li> */}
-      {/* </ul> */}
+      <ul className={styles.ingredients}>
+        {filterIngredients(drink).map((ingredient) => (
+          <li key={ingredient}>{ingredient}</li>
+        ))}
+      </ul>
 
-      {/* <p>Instructions</p> */}
+      <p><b>Instruction: </b>{drink.strInstructions}</p>
 
-      {/* <p>Glass</p> */}
+      <p><b>Glass: </b>{drink.strGlass}</p>
     </>
   )
 }

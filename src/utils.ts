@@ -30,7 +30,11 @@ export const loadDrink = async ({ params }: Arg): Promise<Record<'drink', Drink>
   return { drink }
 }
 
-export const filterIngredients = (obj: Drink) => {
-  const filteredArr = Object.entries(obj).filter((arr) => arr[0].includes('strIngredient') && arr[1] !== null)
-  return filteredArr.map((arr) => arr[1])
-}
+export const filterIngredients = (obj: Drink) =>
+  // const filteredArr = Object.entries(obj).filter((arr) => arr[0].includes('strIngredient') && arr[1] !== null)
+  // return filteredArr.map((arr) => arr[1])
+  Object.entries(obj)
+    .filter(([key]) => key.startsWith('strIngredient'))
+    .map(([, value]) => value)
+
+

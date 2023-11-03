@@ -1,8 +1,9 @@
-import styles from '../Root.module.css'
-import { Drink } from '../api'
-
 import { useLoaderData } from 'react-router-dom'
+
+import { Drink } from '../api'
 import { filterIngredients } from '../utils.ts'
+
+import styles from '../Root.module.css'
 
 const DrinkDetails = () => {
   const { drink } = useLoaderData() as Record<'drink', Drink>
@@ -16,7 +17,7 @@ const DrinkDetails = () => {
 
       <ul className={styles.ingredients}>
         {filterIngredients(drink).map((ingredient) => (
-          <li key={ingredient}>{ingredient}</li>
+          <li key={`ingredient ${Math.random()}`}>{ingredient}</li>
         ))}
       </ul>
 

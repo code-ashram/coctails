@@ -12,6 +12,8 @@ import ErrorCategory from './pages/ErrorCategory.tsx'
 import Category from './pages/Category.tsx'
 import ErrorDrink from './pages/ErrorDrink.tsx'
 import DrinkDetails from './pages/DrinkDetails.tsx'
+import SearchResult from './pages/SearchResult.tsx'
+
 import './index.css'
 
 const router = createBrowserRouter([
@@ -36,6 +38,11 @@ const router = createBrowserRouter([
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
         loader: loadDrink
+      },
+      {
+        path: '/drinks/search',
+        element: <SearchResult />,
+        errorElement: <ErrorDrink />,
       }
     ]
   }

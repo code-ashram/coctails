@@ -21,6 +21,6 @@ export const getDrink = async (id: string): Promise<Drink> =>
   client.get<Record<'drinks', Drink[]>>(`/lookup.php?i=${id}`)
     .then((response) => response.data.drinks[0])
 
-// export const getComments = async (postId: number): Promise<Comment[]> =>
-//   client.get<Comment[]>(`/comments`, { params: { postId } })
-//     .then((response) => response.data)
+export const getDrinkByName = async (name: string): Promise<Drink[]> =>
+  client.get<Record<'drinks', Drink[]>>(`/search.php?s=${name}`)
+    .then((response) => response.data.drinks)

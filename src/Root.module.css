@@ -3,6 +3,16 @@
   height: calc(100% - 84px);
 }
 
+:local(.search) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+:local(.searchInput) {
+  margin-left: 20px;
+}
+
 :local(.list) {
   padding: 20px;
   border-right: 1px solid white;

@@ -44,3 +44,20 @@
 :local(.drinkImg) {
   width: 300px;
 }
+
+:local(.drinkSearchImg) {
+  width: 200px;
+}
+
+:local(.searchItem) {
+  width: 200px;
+}
+
+:local(.searchItem):not(:first-child) {
+  margin-left: 10px;
+}
+
+:local(.searchWindow) {
+  display: flex;
+  flex-wrap: wrap;
+}

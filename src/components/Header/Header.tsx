@@ -6,11 +6,6 @@ import { FormEvent } from 'react'
 const Header = () => {
   const navigate = useNavigate()
 
-  // const handleSubmit = (event: FormEvent) => {
-  //   event.preventDefault()
-  //   navigate(`/drinks/search?query=${event.target.value}`)
-  // }
-
   const formSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const [search ] = event.currentTarget.elements

@@ -5,7 +5,7 @@ import {
   RouterProvider
 } from 'react-router-dom'
 
-import { loadCategories, loadDrink, loadDrinks } from './utils.ts'
+import { loadCategories, loadDrink, loadDrinks, loadSearchResult } from './utils.ts'
 import Root from './pages/Root.tsx'
 import ErrorPage from './pages/Errors/ErrorPage.tsx'
 import ErrorCategory from './pages/Errors/ErrorCategory.tsx'
@@ -43,6 +43,9 @@ const router = createBrowserRouter([
         path: '/drinks/search',
         element: <SearchResult />,
         errorElement: <ErrorDrink />,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        loader: loadSearchResult
       }
     ]
   }

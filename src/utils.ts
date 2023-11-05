@@ -1,4 +1,4 @@
-import { Category, Drink, getCategories, getDrink, getDrinks } from './api'
+import { Category, Drink, getCategories, getDrink, getDrinkByName, getDrinks } from './api'
 
 export const convertValue = (value: string) => value.split(' ').join('_')
 
@@ -28,6 +28,13 @@ export const loadDrinks = async ({ params }: Arg): Promise<Record<'drinks', Drin
 export const loadDrink = async ({ params }: Arg): Promise<Record<'drink', Drink>> => {
   const drink = await getDrink(params.drinkId)
   return { drink }
+}
+
+export const loadSearchResult = async (): Promise<Record<'drinks', Drink[]>> => {
+  const query = new URLSearchParams(window.location.search).get('query')
+  const drinks = await getDrinkByName(query ?? '')
+  console.log(drinks)
+  return { drinks }
 }
 
 export const filterIngredients = (obj: Drink) =>

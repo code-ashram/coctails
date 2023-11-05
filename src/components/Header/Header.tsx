@@ -4,19 +4,18 @@ import styles from '../../Root.module.css'
 import { FormEvent } from 'react'
 
 const Header = () => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   // const handleSubmit = (event: FormEvent) => {
   //   event.preventDefault()
   //   navigate(`/drinks/search?query=${event.target.value}`)
   // }
 
-  const formSubmit = (event) => {
+  const formSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.target);
-    const formObject = Object.fromEntries(data.entries());
+    const [search ] = event.currentTarget.elements
 
-    console.log(event)
+    return navigate(`/drinks/search?query=${(search as HTMLInputElement).value}`)
   }
 
   return (

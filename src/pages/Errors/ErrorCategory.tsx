@@ -1,4 +1,4 @@
-import styles from '../Root.module.css'
+import styles from '../../Root.module.css'
 
 const ErrorCategory = () => (
   <section className={styles.errorPage}>

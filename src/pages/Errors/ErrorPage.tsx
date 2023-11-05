@@ -1,6 +1,6 @@
-import Header from '../components/Header'
+import Header from '../../components/Header'
 
-import styles from '../Root.module.css'
+import styles from '../../Root.module.css'
 
 const ErrorPage = () => (
   <section className={styles.errorPage}>

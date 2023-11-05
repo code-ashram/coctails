@@ -7,10 +7,10 @@ import {
 
 import { loadCategories, loadDrink, loadDrinks } from './utils.ts'
 import Root from './pages/Root.tsx'
-import ErrorPage from './pages/ErrorPage.tsx'
-import ErrorCategory from './pages/ErrorCategory.tsx'
+import ErrorPage from './pages/Errors/ErrorPage.tsx'
+import ErrorCategory from './pages/Errors/ErrorCategory.tsx'
 import Category from './pages/Category.tsx'
-import ErrorDrink from './pages/ErrorDrink.tsx'
+import ErrorDrink from './pages/Errors/ErrorDrink.tsx'
 import DrinkDetails from './pages/DrinkDetails.tsx'
 import SearchResult from './pages/SearchResult.tsx'
 
